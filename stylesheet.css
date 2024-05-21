@@ -1,73 +1,98 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Basic reset to remove default margins and paddings, and set box-sizing to border-box */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    box-sizing: border-box;
 }
 
-.container {
-    max-width: 960px;
-    margin: 20px auto;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
+/* Body styling */
+body {
+    font-family: Arial, sans-serif; /* Sets the font family */
+    color: #fff; /* Sets the text color to white */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
+/* Header styling */
 header {
-    text-align: center;
-    margin-bottom: 40px;
+    background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
+    color: #fff; /* White text color */
+    text-align: center; /* Centers the text */
+    padding: 1rem 0; /* Adds padding to the top and bottom */
+    position: sticky; /* Makes the header stick to the top */
+    top: 0; /* Positions the sticky header at the top */
+    z-index: 1000; /* Ensures the header is above other elements */
 }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: 20px;
+/* Navigation styling */
+nav ul {
+    list-style: none; /* Removes bullet points from the list */
+    display: flex; /* Displays list items in a row */
+    justify-content: center; /* Centers the list items horizontally */
+    gap: 1rem; /* Adds space between the list items */
 }
 
-.intro {
-    margin-top: 20px;
-    font-size: 1.1em;
-    line-height: 1.6;
+nav a {
+    color: #ffa500; /* Sets the link color to orange */
+    text-decoration: none; /* Removes the underline from links */
+    font-weight: bold; /* Makes the text bold */
 }
 
-h1, h2 {
-    color: #0056b3;
+nav a:hover {
+    text-decoration: underline; /* Underlines the link on hover */
 }
 
-.project {
-    border-bottom: 1px solid #eee;
-    padding: 20px;
-    transition: background-color 0.3s;
+/* Main section styling */
+main {
+    margin: 20px; /* Adds margin around the main content */
 }
 
-.project:last-child {
-    border-bottom: none;
+/* Court section styling */
+.court-section {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    margin-bottom: 20px; /* Adds space below each section */
+    padding: 20px; /* Adds padding inside each section */
+    border-radius: 10px; /* Rounds the corners of the sections */
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Smooth transition for scaling and background color changes */
 }
 
-.project:hover {
-    background-color: #f9f9f9;
+/* Adding hover effect */
+.court-section:hover {
+    transform: scale(1.05); /* Slightly enlarges the section on hover */
+    background-color: rgba(0, 0, 0, 0.9); /* Darkens the background color on hover */
 }
 
-p {
-    color: #666;
-}
-
+/* Footer styling */
 footer {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #aaa;
+    text-align: center; /* Centers the text */
+    padding: 1rem 0; /* Adds padding to the top and bottom */
+    background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
+    color: #fff; /* White text color */
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
+/* Animation for sections */
+@keyframes slideIn {
+    from {
+        opacity: 0; /* Starts with the section being transparent */
+        transform: translateY(20px); /* Starts with the section slightly below its final position */
+    }
+    to {
+        opacity: 1; /* Ends with the section being fully opaque */
+        transform: translateY(0); /* Ends with the section in its final position */
+    }
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #0056b3;
+.court-section {
+    animation: slideIn 1s ease-in-out; /* Applies the slideIn animation to sections */
+}
+
+/* Specific styling for project sections */
+#hardware-projects, #software-projects {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    margin-bottom: 20px; /* Adds space below each section */
+    padding: 20px; /* Adds padding inside each section */
+    border-radius: 10px; /* Rounds the corners of the sections */
+}
+
+#hardware-projects h3, #software-projects h3 {
+    color: #ffa500; /* Orange color for section titles */
 }
