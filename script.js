@@ -1,42 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Check if there are any court sections on the current page
-    const sections = document.querySelectorAll('.court-section');
-    
-    // Only proceed if sections are found
-    if (sections.length > 0) {
-        // Array of background images to use for each section
-        const backgrounds = [
-            'url("trial.webp")',
-            'url("trial.webp")',
-            'url("trial.webp")',
-            'url("trial.webp")'
-        ];
-        
-        // Options for the IntersectionObserver
-        const options = {
-            threshold: 0.5 // Trigger when 50% of the section is visible
+    // Add the fade-in class to the body element to trigger the animation
+    document.body.classList.add('fade-in');
+
+    // Function to animate the transition effect when navigating to a new page
+    function animateTransition(url) {
+        // Show the animation overlay
+        const overlay = document.querySelector('.animation-overlay');
+        const video = document.querySelector('.animation-video');
+        overlay.classList.add('show');
+        video.play();
+
+        // Wait for the video to end before navigating
+        video.onended = () => {
+            window.location.href = url;
         };
-        
-        // Callback function for the IntersectionObserver
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Get the index of the intersecting section
-                    const index = Array.from(sections).indexOf(entry.target);
-                    // Change the background image of the body
-                    document.body.style.backgroundImage = backgrounds[index];
-                    // Scale up the intersecting section
-                    entry.target.style.transform = 'scale(1.1)';
-                } else {
-                    // Scale down the section when it's not intersecting
-                    entry.target.style.transform = 'scale(1)';
-                }
-            });
-        }, options);
-        
-        // Observe each section
-        sections.forEach(section => {
-            observer.observe(section);
-        });
     }
+
+    // Attach event listeners to navigation links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = e.target.href;
+            animateTransition(url);
+        });
+    });
+
+    // Intersection Observer for zoom in/out effect on sections
+    const sections = document.querySelectorAll('.court-section');
+    const options = {
+        threshold: 0.5
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.transform = 'scale(1.1)';
+            } else {
+                entry.target.style.transform = 'scale(1)';
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
+
+
+

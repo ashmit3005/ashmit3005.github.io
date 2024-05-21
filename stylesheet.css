@@ -74,6 +74,7 @@ footer {
 
 /* Animation for sections */
 @keyframes slideIn {
+    
     from {
         opacity: 0; /* Starts with the section being transparent */
         transform: translateY(20px); /* Starts with the section slightly below its final position */
@@ -82,6 +83,50 @@ footer {
         opacity: 1; /* Ends with the section being fully opaque */
         transform: translateY(0); /* Ends with the section in its final position */
     }
+}
+
+/*Animation for pages*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the body element */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Styles for the animation overlay */
+.animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Show the overlay */
+.animation-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Style for the video */
+.animation-video {
+    max-width: 80%;
+    max-height: 80%;
 }
 
 /* Specific styling for project sections */
@@ -111,3 +156,5 @@ footer {
         padding: 10px; /* Reduce padding inside sections on small screens */
     }
 }
+
+
