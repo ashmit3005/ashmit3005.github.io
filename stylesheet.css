@@ -10,6 +10,8 @@ body {
     font-family: Arial, sans-serif; /* Sets the font family */
     color: #fff; /* Sets the text color to white */
     scroll-behavior: smooth; /* Enables smooth scrolling */
+    background-size: cover; /* Ensure background covers the entire page */
+    background-position: center; /* Center the background */
 }
 
 /* Header styling */
@@ -53,6 +55,7 @@ main {
     padding: 20px; /* Adds padding inside each section */
     border-radius: 10px; /* Rounds the corners of the sections */
     transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Smooth transition for scaling and background color changes */
+    animation: slideIn 1s ease-in-out; /* Applies the slideIn animation to sections */
 }
 
 /* Adding hover effect */
@@ -81,10 +84,6 @@ footer {
     }
 }
 
-.court-section {
-    animation: slideIn 1s ease-in-out; /* Applies the slideIn animation to sections */
-}
-
 /* Specific styling for project sections */
 #hardware-projects, #software-projects {
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
@@ -95,4 +94,20 @@ footer {
 
 #hardware-projects h3, #software-projects h3 {
     color: #ffa500; /* Orange color for section titles */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically on small screens */
+        gap: 0.5rem; /* Reduce space between items */
+    }
+
+    main {
+        margin: 10px; /* Reduce margin on small screens */
+    }
+
+    .court-section {
+        padding: 10px; /* Reduce padding inside sections on small screens */
+    }
 }
