@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Array of background images to use for each section
     const backgrounds = [
-        'url("court-1.jpg")',
-        'url("court-2.jpg")',
-        'url("court-3.jpg")',
-        'url("court-4.jpg")'
+        'url("trial.webp")',
+        'url("trial.webp")',
+        'url("trial.webp")',
+        'url("trial.webp")'
     ];
     
     // Options for the IntersectionObserver
