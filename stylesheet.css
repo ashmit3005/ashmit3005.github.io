@@ -74,7 +74,6 @@ footer {
 
 /* Animation for sections */
 @keyframes slideIn {
-    
     from {
         opacity: 0; /* Starts with the section being transparent */
         transform: translateY(20px); /* Starts with the section slightly below its final position */
@@ -85,7 +84,7 @@ footer {
     }
 }
 
-/*Animation for pages*/
+/* Animation for pages */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -141,6 +140,68 @@ footer {
     color: #ffa500; /* Orange color for section titles */
 }
 
+/* Project section styling */
+.project {
+    margin-bottom: 40px; /* Space between projects */
+    opacity: 0; /* Start with projects hidden */
+    transform: translateY(50px); /* Start with projects shifted down */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition for fade and slide */
+}
+
+.project.in-view {
+    opacity: 1; /* Fade in projects */
+    transform: translateY(0); /* Slide projects into place */
+}
+
+.project h3 {
+    color: #ffa500; /* Project title color */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.project-description {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for description */
+    padding: 15px; /* Padding inside description box */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below description */
+}
+
+.project-gallery {
+    display: flex; /* Display gallery items in a row */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    gap: 10px; /* Space between gallery items */
+}
+
+.project-gallery .gallery-slide {
+    flex: 0 0 auto; /* Prevent gallery items from stretching */
+    width: 200px; /* Fixed width for gallery items */
+}
+
+.project-gallery img,
+.project-gallery video {
+    max-width: 100%; /* Responsive media */
+    border-radius: 10px; /* Rounded corners for media */
+}
+
+.project-tools {
+    margin-top: 15px; /* Space above tools list */
+}
+
+.project-tools h4 {
+    margin-bottom: 10px; /* Space below tools heading */
+}
+
+.project-tools ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.project-tools ul li {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for tools */
+    padding: 5px 10px; /* Padding inside tools items */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 5px; /* Space between tools items */
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
     nav ul {
@@ -155,6 +216,8 @@ footer {
     .court-section {
         padding: 10px; /* Reduce padding inside sections on small screens */
     }
+
+    .project-gallery .gallery-slide {
+        width: 150px; /* Adjust width for smaller screens */
+    }
 }
-
-
