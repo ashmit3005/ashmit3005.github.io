@@ -55,9 +55,9 @@ nav ul li a:hover {
 .profile-pic {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     margin-bottom: 20px;
     border: 4px solid #1e90ff;
+    /* Remove the border-radius property */
 }
 
 .links a {
@@ -101,10 +101,4 @@ body::before {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-}
-
-.loading video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
