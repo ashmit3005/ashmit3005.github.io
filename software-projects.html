@@ -35,7 +35,58 @@
             <!-- Add more projects as needed -->
         </div>
     </section>
-
     <script src="scripts.js"></script>
+    <script>
+        function navigateTo(event, url) {
+            event.preventDefault();
+
+            // Create the video popup window
+            const videoPopup = window.open("", "VideoPopup", "width=600,height=400");
+
+            // Create the HTML content for the video popup
+            const videoHtml = `
+                <html>
+                <head>
+                    <title>Video Popup</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #000;
+                        }
+                        video {
+                            width: 100%;
+                            height: auto;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <video controls autoplay>
+                        <source src="animation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </body>
+                </html>
+            `;
+
+            // Write the HTML content to the popup window
+            videoPopup.document.open();
+            videoPopup.document.write(videoHtml);
+            videoPopup.document.close();
+
+            // Redirect to the target URL after the video ends
+            videoPopup.document.querySelector('video').onended = function() {
+                window.location.href = url;
+            };
+        }
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                navigateTo(event, this.href);
+            });
+        });
+    </script>
 </body>
 </html>
