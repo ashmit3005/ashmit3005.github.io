@@ -1,223 +1,110 @@
-/* Basic reset to remove default margins and paddings, and set box-sizing to border-box */
-* {
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #121212;
+    color: #ffffff;
 }
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif; /* Sets the font family */
-    color: #fff; /* Sets the text color to white */
-    scroll-behavior: smooth; /* Enables smooth scrolling */
-    background-size: cover; /* Ensure background covers the entire page */
-    background-position: center; /* Center the background */
-}
-
-/* Header styling */
-header {
-    background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
-    color: #fff; /* White text color */
-    text-align: center; /* Centers the text */
-    padding: 1rem 0; /* Adds padding to the top and bottom */
-    position: sticky; /* Makes the header stick to the top */
-    top: 0; /* Positions the sticky header at the top */
-    z-index: 1000; /* Ensures the header is above other elements */
-}
-
-/* Navigation styling */
 nav ul {
-    list-style: none; /* Removes bullet points from the list */
-    display: flex; /* Displays list items in a row */
-    justify-content: center; /* Centers the list items horizontally */
-    gap: 1rem; /* Adds space between the list items */
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
-nav a {
-    color: #ffa500; /* Sets the link color to orange */
-    text-decoration: none; /* Removes the underline from links */
-    font-weight: bold; /* Makes the text bold */
+nav ul li {
+    margin: 0 15px;
 }
 
-nav a:hover {
-    text-decoration: underline; /* Underlines the link on hover */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
 }
 
-/* Main section styling */
-main {
-    margin: 20px; /* Adds margin around the main content */
+nav ul li a:hover {
+    background-color: #575757;
 }
 
-/* Court section styling */
-.court-section {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    margin-bottom: 20px; /* Adds space below each section */
-    padding: 20px; /* Adds padding inside each section */
-    border-radius: 10px; /* Rounds the corners of the sections */
-    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Smooth transition for scaling and background color changes */
-    animation: slideIn 1s ease-in-out; /* Applies the slideIn animation to sections */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
 
-/* Adding hover effect */
-.court-section:hover {
-    transform: scale(1.05); /* Slightly enlarges the section on hover */
-    background-color: rgba(0, 0, 0, 0.9); /* Darkens the background color on hover */
+.about-me-content {
+    max-width: 800px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer styling */
-footer {
-    text-align: center; /* Centers the text */
-    padding: 1rem 0; /* Adds padding to the top and bottom */
-    background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
-    color: #fff; /* White text color */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Animation for sections */
-@keyframes slideIn {
-    from {
-        opacity: 0; /* Starts with the section being transparent */
-        transform: translateY(20px); /* Starts with the section slightly below its final position */
-    }
-    to {
-        opacity: 1; /* Ends with the section being fully opaque */
-        transform: translateY(0); /* Ends with the section in its final position */
-    }
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #1e90ff;
 }
 
-/* Animation for pages */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.links a {
+    color: #1e90ff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
 }
 
-/* Apply the animation to the body element */
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
+.links a:hover {
+    text-decoration: underline;
 }
 
-/* Styles for the animation overlay */
-.animation-overlay {
+.page {
+    display: block;
+}
+
+body::before {
+    content: "";
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
+    z-index: -1;
+    filter: blur(8px);
+}
+
+.loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
     align-items: center;
+    justify-content: center;
     z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
-/* Show the overlay */
-.animation-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Style for the video */
-.animation-video {
-    max-width: 80%;
-    max-height: 80%;
-}
-
-/* Specific styling for project sections */
-#hardware-projects, #software-projects {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    margin-bottom: 20px; /* Adds space below each section */
-    padding: 20px; /* Adds padding inside each section */
-    border-radius: 10px; /* Rounds the corners of the sections */
-}
-
-#hardware-projects h3, #software-projects h3 {
-    color: #ffa500; /* Orange color for section titles */
-}
-
-/* Project section styling */
-.project {
-    margin-bottom: 40px; /* Space between projects */
-    opacity: 0; /* Start with projects hidden */
-    transform: translateY(50px); /* Start with projects shifted down */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition for fade and slide */
-}
-
-.project.in-view {
-    opacity: 1; /* Fade in projects */
-    transform: translateY(0); /* Slide projects into place */
-}
-
-.project h3 {
-    color: #ffa500; /* Project title color */
-    margin-bottom: 10px; /* Space below title */
-}
-
-.project-description {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for description */
-    padding: 15px; /* Padding inside description box */
-    border-radius: 10px; /* Rounded corners */
-    margin-bottom: 15px; /* Space below description */
-}
-
-.project-gallery {
-    display: flex; /* Display gallery items in a row */
-    overflow-x: auto; /* Allow horizontal scrolling */
-    gap: 10px; /* Space between gallery items */
-}
-
-.project-gallery .gallery-slide {
-    flex: 0 0 auto; /* Prevent gallery items from stretching */
-    width: 200px; /* Fixed width for gallery items */
-}
-
-.project-gallery img,
-.project-gallery video {
-    max-width: 100%; /* Responsive media */
-    border-radius: 10px; /* Rounded corners for media */
-}
-
-.project-tools {
-    margin-top: 15px; /* Space above tools list */
-}
-
-.project-tools h4 {
-    margin-bottom: 10px; /* Space below tools heading */
-}
-
-.project-tools ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-}
-
-.project-tools ul li {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for tools */
-    padding: 5px 10px; /* Padding inside tools items */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 5px; /* Space between tools items */
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack navigation items vertically on small screens */
-        gap: 0.5rem; /* Reduce space between items */
-    }
-
-    main {
-        margin: 10px; /* Reduce margin on small screens */
-    }
-
-    .court-section {
-        padding: 10px; /* Reduce padding inside sections on small screens */
-    }
-
-    .project-gallery .gallery-slide {
-        width: 150px; /* Adjust width for smaller screens */
-    }
+.loading video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

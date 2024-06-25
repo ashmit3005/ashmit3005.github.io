@@ -3,117 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Projects - Ashmit's Projects Portfolio</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <title>Software Projects</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Ashmit's Personal Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">About Me</a></li>
-                <li><a href="hardware-projects.html">Hardware Projects</a></li>
-                <li><a href="software-projects.html">Software Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="software-projects" class="court-section">
-            <h2>Software Projects</h2>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html" onclick="navigateTo(event, 'index.html')">About Me</a></li>
+            <li><a href="hardware-projects.html" onclick="navigateTo(event, 'hardware-projects.html')">Hardware Projects</a></li>
+            <li><a href="software-projects.html" onclick="navigateTo(event, 'software-projects.html')">Software Projects</a></li>
+            <li><a href="other.html" onclick="navigateTo(event, 'other.html')">Other</a></li>
+        </ul>
+    </nav>
 
-            <!-- Software Project 1 -->
-            <div class="project fade-in-out">
-                <h3>Software Project 1</h3>
-                <div class="project-description">
-                    <p>Write the description of Software Project 1 here. Explain the project's objective, process, and outcome.</p>
-                </div>
-                <div class="project-gallery">
-                    <!-- Add your images or videos here -->
-                    <div class="gallery-slide">
-                        <img src="path/to/image1.jpg" alt="Software Project 1 Image 1">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="path/to/image2.jpg" alt="Software Project 1 Image 2">
-                    </div>
-                    <!-- Add more slides as needed -->
-                </div>
-                <div class="project-tools">
-                    <h4>Technologies & Tools Used</h4>
-                    <ul>
-                        <li>Tool 1</li>
-                        <li>Tool 2</li>
-                        <li>Tool 3</li>
-                        <!-- Add more tools as needed -->
-                    </ul>
+    <!-- Loading Animation -->
+    <div id="loading" class="loading"></div>
+
+    <!-- Software Projects Section -->
+    <section id="software-projects" class="page">
+        <div class="container">
+            <h1>Software Projects</h1>
+            <div class="project">
+                <h2>Project Title</h2>
+                <div class="media">[Media]</div>
+                <p>Brief Description</p>
+                <div class="details">
+                    <p>Detailed Description</p>
                 </div>
             </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
 
-            <!-- Software Project 2 -->
-            <div class="project fade-in-out">
-                <h3>Software Project 2</h3>
-                <div class="project-description">
-                    <p>Write the description of Software Project 2 here. Explain the project's objective, process, and outcome.</p>
-                </div>
-                <div class="project-gallery">
-                    <!-- Add your images or videos here -->
-                    <div class="gallery-slide">
-                        <img src="path/to/image3.jpg" alt="Software Project 2 Image 1">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="path/to/image4.jpg" alt="Software Project 2 Image 2">
-                    </div>
-                    <!-- Add more slides as needed -->
-                </div>
-                <div class="project-tools">
-                    <h4>Technologies & Tools Used</h4>
-                    <ul>
-                        <li>Tool 1</li>
-                        <li>Tool 2</li>
-                        <li>Tool 3</li>
-                        <!-- Add more tools as needed -->
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Software Project 3 -->
-            <div class="project fade-in-out">
-                <h3>Software Project 3</h3>
-                <div class="project-description">
-                    <p>Write the description of Software Project 3 here. Explain the project's objective, process, and outcome.</p>
-                </div>
-                <div class="project-gallery">
-                    <!-- Add your images or videos here -->
-                    <div class="gallery-slide">
-                        <img src="path/to/image5.jpg" alt="Software Project 3 Image 1">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="path/to/image6.jpg" alt="Software Project 3 Image 2">
-                    </div>
-                    <!-- Add more slides as needed -->
-                </div>
-                <div class="project-tools">
-                    <h4>Technologies & Tools Used</h4>
-                    <ul>
-                        <li>Tool 1</li>
-                        <li>Tool 2</li>
-                        <li>Tool 3</li>
-                        <!-- Add more tools as needed -->
-                    </ul>
-                </div>
-            </div>
-
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Ashmit</p>
-    </footer>
-
-    <!-- Animation Overlay -->
-    <div class="animation-overlay">
-        <video class="animation-video" src="animation.mp4"></video>
-    </div>
-    
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

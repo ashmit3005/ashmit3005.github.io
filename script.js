@@ -1,50 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Add the fade-in class to the body element to trigger the animation
-    document.body.classList.add('fade-in');
+function navigateTo(event, page) {
+    event.preventDefault();
+    const loadingElement = document.getElementById('loading');
 
-    // Function to animate the transition effect when navigating to a new page
-    function animateTransition(url) {
-        // Show the animation overlay
-        const overlay = document.querySelector('.animation-overlay');
-        const video = document.querySelector('.animation-video');
-        overlay.classList.add('show');
-        video.play();
+    // Create and append the video element
+    const video = document.createElement('video');
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    const source = document.createElement('source');
+    source.src = 'animation.mp4';
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    loadingElement.appendChild(video);
 
-        // Wait for the video to end before navigating
-        video.onended = () => {
-            window.location.href = url;
-        };
-    }
+    // Show loading animation
+    loadingElement.style.display = 'flex';
 
-    // Attach event listeners to navigation links
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
+    // Simulate loading time with setTimeout
+    setTimeout(() => {
+        // Navigate to the new page
+        window.location.href = page;
+    }, 1000); // Adjust this timeout to match your loading animation duration
+}
+
+window.onload = () => {
+    // Hide loading animation after page load
+    const loadingElement = document.getElementById('loading');
+    loadingElement.style.display = 'none';
+    loadingElement.innerHTML = ''; // Clear the video element
+
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const url = e.target.href;
-            animateTransition(url);
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
-
-    // Intersection Observer for zoom in/out effect on sections
-    const sections = document.querySelectorAll('.court-section');
-    const options = {
-        threshold: 0.5
-    };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.transform = 'scale(1.1)';
-            } else {
-                entry.target.style.transform = 'scale(1)';
-            }
-        });
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-
-
-
+};
