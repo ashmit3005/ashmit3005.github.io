@@ -36,6 +36,7 @@ nav ul li a:hover {
     align-items: center;
     height: 100vh;
     text-align: center;
+    padding: 20px;
 }
 
 .about-me-content {
@@ -57,7 +58,6 @@ nav ul li a:hover {
     height: 150px;
     margin-bottom: 20px;
     border: 4px solid #1e90ff;
-    /* Remove the border-radius property */
 }
 
 .links a {
@@ -101,4 +101,112 @@ body::before {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+}
+
+.loading video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skills-section {
+    padding: 40px 20px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.skills-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.skills-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.skills-column {
+    flex: 1;
+    padding: 20px;
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skills-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #1e90ff;
+}
+
+.skill {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.skill-bar {
+    height: 10px;
+    border-radius: 5px;
+    background: #444;
+    position: relative;
+}
+
+.skill-bar.very-strong::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #4caf50;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skill-bar.strong::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 80%;
+    background: #4caf50;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skill-bar.okay::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 60%;
+    background: #ff9800;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skill-bar.weak::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 40%;
+    background: #f44336;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
