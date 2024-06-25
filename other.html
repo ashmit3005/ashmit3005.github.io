@@ -3,33 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Other</title>
-    <link rel="stylesheet" href="project-pages.css">
+    <title>Other - Chill Zone</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #2b2b2b;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00bfff;
+        }
+        .loading {
+            display: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        .chill-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e1e1e;
+            padding: 50px 20px;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .chill-zone h2 {
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+        .chill-zone p {
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 800px;
+        }
+        .chill-zone .spotify-player {
+            width: 100%;
+            max-width: 600px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Menu -->
     <nav>
         <ul>
-            <li><a href="index.html" onclick="navigateTo(event, 'index.html')">About Me</a></li>
-            <li><a href="hardware-projects.html" onclick="navigateTo(event, 'hardware-projects.html')">Hardware Projects</a></li>
-            <li><a href="software-projects.html" onclick="navigateTo(event, 'software-projects.html')">Software Projects</a></li>
-            <li><a href="other.html" onclick="navigateTo(event, 'other.html')">Other</a></li>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="hardware-projects.html">Hardware Projects</a></li>
+            <li><a href="software-projects.html">Software Projects</a></li>
+            <li><a href="other.html">Other</a></li>
         </ul>
     </nav>
 
     <!-- Loading Animation -->
     <div id="loading" class="loading"></div>
 
-    <!-- Other Section -->
-    <section id="other" class="page">
+    <!-- Chill Zone Section -->
+    <section class="chill-zone">
         <div class="container">
-            <h1>Other</h1>
-            <p>This is the other page content. Add any additional content or projects here.</p>
+            <h2>Chill Zone</h2>
+            <p>Relax and enjoy my collection of favorite songs. Feel the vibe and let the music take you away.</p>
+            <!-- Spotify Embed Player -->
+            <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/your-playlist-id" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </section>
     <script src="scripts.js"></script>
-    <script>
-         function navigateTo(event, url) {
+    <!-- <script>
+        function navigateTo(event, url) {
             event.preventDefault();
 
             // Create the video popup window
@@ -56,7 +122,7 @@
                 </head>
                 <body>
                     <video autoplay>
-                        <source src="animation.mp4" type="video/mp4">
+                        <source src="video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </body>
@@ -79,6 +145,6 @@
                 navigateTo(event, this.href);
             });
         });
-    </script>
+    </script> -->
 </body>
 </html>
