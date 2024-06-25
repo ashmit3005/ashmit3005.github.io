@@ -62,19 +62,19 @@ nav ul li a {
     background-color: #3a3a3a;
 }
 .skill-bar.strong {
-    width: 80%;
+    width: 60%;
     background-color: #4caf50;
 }
 .skill-bar.very-strong {
-    width: 90%;
+    width: 75%;
     background-color: #4caf50;
 }
 .skill-bar.very-very-strong {
     width: 90%;
-    background-color: #2e8931;
+    background-color: #134e14;
 }
 .skill-bar.okay {
-    width: 60%;
+    width: 45%;
     background-color: #ff9800;
 }
 .skill-bar.weak {
