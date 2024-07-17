@@ -25,75 +25,27 @@
         <div class="container">
             <h1>Hardware Projects</h1>
             <div class="project">
-                <h2>Project Title</h2>
-                <div class="media">[Media]</div>
-                <p>Brief Description</p>
+                <h2>Mortal Mayhem</h2>
+                <div class="media">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lXSvIbOUCy0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>An emulation of the retro classic Arcade Game Mortal Kombat</p>
                 <div class="details">
-                    <p>Detailed Description</p>
+                    <p> This 2-player handheld game is powered by the TI TIVA TM4C123G lauchpad. Custom-built hardware includes buttons for menu item selection/ attack, DACs for sound output, ADCs for joystick sampling, wireless receiver 
+                        and transmitter antennas for serialized player-to-player communication, and an LCD screen for display.
+                        The main game routine is programmed in C. C++ modules are used to initialize hardware and communication protocols. Hardware interrupts are triggered on player input and are serviced using interrupt service routines.
+                        Busy-Wait threads and sempahores are used for synchronization of interrupts, enabling concurrency. 
+                        Bounding Volume Hierarchy(BVH) algorithm is used for collision detection to process events where a player strikes the other and adjust health bar. This algorithm encloses the player sprites into geometric shapes and assesses overlap.
+                        Race conditions are caused by 2 players striking at the same time, which are solved by a randomization algorithm which arbitrarily sets priority.
+                        SPI communication module is implemented for communication with LCD screen. Serialization is configured using queues for firt-in-first-out data retrieval. Error codes are used error-checking and debugging.
+                        Images are stored as hexadecimal pixel matrices, and are loaded into buffers for display. 
+                        Sounds/ music are stored as WAV files comprising discretely sampled pulses and are read periodically for playback.
+                    </p>
                 </div>
             </div>
             <!-- Add more projects as needed -->
         </div>
     </section>
     <script src="scripts.js"></script>
-    <!-- <script>
-    function navigateTo(event, url) {
-        event.preventDefault();
-
-        // Create the video popup window
-        const videoPopup = window.open("", "VideoPopup", "width=600,height=400");
-
-        // Create the HTML content for the video popup
-        const videoHtml = `
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <title>Video Popup</title>
-                <style>
-                    body {
-                        margin: 0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: #000;
-                    }
-                    video {
-                        width: 100%;
-                        height: auto;
-                    }
-                </style>
-            </head>
-            <body>
-                <video id="popupVideo" autoplay>
-                    <source src="animation.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <script>
-                    const video = document.getElementById('popupVideo');
-                    video.onended = function() {
-                        window.opener.location.href = "${url}";
-                        window.close();
-                    };
-                    video.play().catch(error => {
-                        window.opener.location.href = "${url}";
-                        window.close();
-                    });
-                <\/script>
-            </body>
-            </html>
-        `;
-
-        // Write the HTML content to the popup window
-        videoPopup.document.open();
-        videoPopup.document.write(videoHtml);
-        videoPopup.document.close();
-    }
-
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(event) {
-            navigateTo(event, this.href);
-        });
-    });
-</script> -->
 </body>
 </html>
