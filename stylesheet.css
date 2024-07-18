@@ -117,3 +117,10 @@ nav ul li a:hover {
 .links a:hover {
     background-color: #008bbf;
 }
+
+.bio {
+    max-width: 800px; /* Set the maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Optional: add padding for better readability */
+    text-align: center; /* Optional: center-align the text */
+}
