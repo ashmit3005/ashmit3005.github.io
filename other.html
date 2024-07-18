@@ -42,7 +42,7 @@
         .container {
             padding: 20px;
         }
-        .chill-zone {
+        .random {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -52,22 +52,16 @@
             color: #ffffff;
             min-height: 100vh;
         }
-        .chill-zone h2 {
+        .random h2 {
             color: #00bfff;
             margin-bottom: 20px;
         }
-        .chill-zone p {
+        .random p {
             margin-bottom: 20px;
             text-align: center;
             max-width: 800px;
         }
-        .chill-zone .spotify-player {
-            width: 100%;
-            max-width: 600px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
+
     </style>
 </head>
 <body>
@@ -84,67 +78,14 @@
     <!-- Loading Animation -->
     <div id="loading" class="loading"></div>
 
-    <!-- Chill Zone Section -->
-    <section class="chill-zone">
+    <!-- "Random" Section -->
+    <section class="random">
         <div class="container">
-            <h2>Chill Zone</h2>
-            <p>Relax and enjoy my collection of favorite songs. Feel the vibe and let the music take you away.</p>
-            <!-- Spotify Embed Player -->
-            <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/your-playlist-id" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <h2>Random</h2>
+            <p>#random</p>
+            <iframe class="animation-player" src="animation.mp4" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </section>
     <script src="scripts.js"></script>
-    <!-- <script>
-        function navigateTo(event, url) {
-            event.preventDefault();
-
-            // Create the video popup window
-            const videoPopup = window.open("", "VideoPopup", "width=600,height=400");
-
-            // Create the HTML content for the video popup
-            const videoHtml = `
-                <html>
-                <head>
-                    <title>Video Popup</title>
-                    <style>
-                        body {
-                            margin: 0;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            background-color: #000;
-                        }
-                        video {
-                            width: 100%;
-                            height: auto;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <video autoplay>
-                        <source src="video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </body>
-                </html>
-            `;
-
-            // Write the HTML content to the popup window
-            videoPopup.document.open();
-            videoPopup.document.write(videoHtml);
-            videoPopup.document.close();
-
-            // Redirect to the target URL after the video ends
-            videoPopup.document.querySelector('video').onended = function() {
-                window.location.href = url;
-            };
-        }
-
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(event) {
-                navigateTo(event, this.href);
-            });
-        });
-    </script> -->
 </body>
 </html>
