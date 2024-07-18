@@ -69,6 +69,59 @@ h1 {
     font-size: 1.1em;
 }
 
+
+/* New styling for the brief description block */
+.brief-description {
+    background-color: #4A90E2;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.brief-description:hover {
+    background-color: #357ABD;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.brief-description img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.brief-description h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.brief-description p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Styling for the big description block with platinum background */
+.big-description {
+    background-color: #E5E4E2; /* Platinum background */
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.big-description p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
 .loading {
     display: none;
     position: fixed;

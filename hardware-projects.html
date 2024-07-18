@@ -60,7 +60,7 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/lXSvIbOUCy0" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <p>An emulation of the retro classic Arcade Game Mortal Kombat</p>
-                <div class="details">
+                <div class="big-description">
                     <p> This 2-player handheld game is powered by the TI TIVA TM4C123G lauchpad. Custom-built hardware includes buttons for menu item selection/ attack, DACs for sound output, ADCs for joystick sampling, wireless receiver 
                         and transmitter antennas for serialized player-to-player communication, and an LCD screen for display.
                         The main game routine is programmed in C. C++ modules are used to initialize hardware and communication protocols. Hardware interrupts are triggered on player input and are serviced using interrupt service routines.
@@ -87,21 +87,33 @@
                             <div class = "accordion-item">
                                 <div class = "accordion-header">Image2</div>
                                 <div class = "accordion-content">
-                                    <img src="image1.webp" alt="Image 2 Description">
+                                    <img src="image 4.png" alt="Acrhitecture">
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <div class="accordion-header">Image 3</div>
                                 <div class="accordion-content">
-                                    <img src="image1.webp" alt="Image 3 Description">
+                                    <img src="image2.webp" alt="MOSFET Configuration">
                                 </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">Image 3</div>
+                                <div class="accordion-content">
+                                    <img src="image3.png" alt="MPPT Algorithm">
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
                     <p>Printed Circuit Board </p>
-                    <div class="details">
+                    <div class="big-description">
                         <p> 
-                            
+                            Board powering a DC motor from a solar panel, competing with other boards to deliver the maximum power to the motor. 
+                            Voltage dividers and current sensing resistors measure the solar panel's voltage (V_solar) and current (I_solar), with operational amplifiers conditioning these signals. The microcontroller reads these measurements with custom ADC and runs the Perturb & Observe (P&O) algorithm to determine the optimal operating point. 
+                            The microcontroller also dynamically configures a programmable gain amplifier (PGA) to adapt to varying signal levels, ensuring accurate measurements. 
+                            The control signal is output to a DAC, which converts it to an analog voltage for a voltage-controlled PWM generator. 
+                            This PWM signal controls two MOSFETs in a half-bridge configuration, with an additional analog feedback loop using a precision voltage reference and a low-pass filter to stabilize and fine-tune the PWM signal for more efficient power delivery. 
+                            The PCB is designed and fabricated using KiCAD, ensuring all components are correctly placed and routed. Testing involves verifying signal measurements, microcontroller functionality, PWM output, and overall system performance, including the adaptive PGA configuration and the analog feedback loop's effectiveness, under varying solar conditions to ensure maximum power delivery and enhanced system stability.
                         </p>
         </div>
     </section>
