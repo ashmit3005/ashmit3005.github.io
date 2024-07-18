@@ -101,6 +101,7 @@ nav ul li a:hover {
     height: 150px;
     border-radius: 20px;
     border: 5px solid #00bfff;
+    object-fit: cover; /* Ensures the image covers the entire area while maintaining aspect ratio */
 
 }
 .links a {
