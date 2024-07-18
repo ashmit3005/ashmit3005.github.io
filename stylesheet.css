@@ -1,118 +1,134 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
 }
-nav {
-    background-color: #2b2b2b;
-    padding: 10px 0;
-}
+
 nav ul {
     list-style-type: none;
     padding: 0;
+    background-color: #333;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
+
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
+
 nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 14px 20px;
+    display: block;
+    transition: background-color 0.3s;
 }
+
 nav ul li a:hover {
-    color: #00bfff;
+    background-color: #575757;
+    border-radius: 4px;
 }
-.loading {
-    display: none;
-}
+
 .container {
-    padding: 20px;
-}
-.skills-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #1e1e1e;
-    padding: 50px 20px;
-}
-.skills-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
     max-width: 1200px;
-}
-.skills-column {
-    width: 45%;
-    background-color: #2b2b2b;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
-.skills-column h3 {
-    color: #00bfff;
+
+h1 {
+    color: #444;
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
-.skill {
-    margin-bottom: 15px;
+
+.project {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.skill span {
-    display: block;
-    margin-bottom: 5px;
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.skill-bar {
-    height: 10px;
-    border-radius: 5px;
-    background-color: #3a3a3a;
-}
-.skill-bar.strong {
-    width: 60%;
-    background-color: #4caf50;
-}
-.skill-bar.very-strong {
-    width: 75%;
-    background-color: #4caf50;
-}
-.skill-bar.very-very-strong {
-    width: 90%;
-    background-color: #872a74;
-}
-.skill-bar.okay {
-    width: 45%;
-    background-color: #ff9800;
-}
-.skill-bar.weak {
-    width: 30%;
-    background-color: #f44336;
-}
-.profile {
-    text-align: center;
+
+.media {
     margin: 20px 0;
 }
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    border: 5px solid #00bfff;
 
+.details {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1em;
 }
-.links a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #00bfff;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+
+/* New styling for the brief description block */
+.brief-description {
+    background-color: #4A90E2;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.links a:hover {
-    background-color: #008bbf;
+
+.brief-description:hover {
+    background-color: #357ABD;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.brief-description img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.brief-description h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.brief-description p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Loading Animation */
+.loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.loading video {
+    width: 80%;
+    max-width: 800px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.loading .message {
+    font-size: 1.5em;
 }

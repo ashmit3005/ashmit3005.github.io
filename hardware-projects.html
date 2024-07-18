@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardware Projects</title>
     <link rel="stylesheet" href="project-pages.css">
+    <style>
+        .accordion {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .accordion-item {
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+
+        .accordion-header {
+            background: #f1f1f1;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .accordion-content img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -42,10 +72,55 @@
                         Sounds/ music are stored as WAV files comprising discretely sampled pulses and are read periodically for playback.
                     </p>
                 </div>
-            </div>
-            <!-- Add more projects as needed -->
+                <div class="project">
+                    <h2>Elevator Motor Bridge Driver</h2>
+                    <div class="media">
+                        <div class = "accordion">
+                            <div class = "accordion-item">
+                                <div class = "accordion-header">
+                                    Image1
+                                </div>
+                                <div class = "accordion-content">
+                                    <img src="image1.webp" alt="PCB">
+                                </div>
+                            </div>
+                            <div class = "accordion-item">
+                                <div class = "accordion-header">Image2</div>
+                                <div class = "accordion-content">
+                                    <img src="image1.webp" alt="Image 2 Description">
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">Image 3</div>
+                                <div class="accordion-content">
+                                    <img src="image1.webp" alt="Image 3 Description">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Printed Circuit Board </p>
+                    <div class="details">
+                        <p> 
+                            
+                        </p>
         </div>
     </section>
     <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(function(header) {
+            header.addEventListener('click', function() {
+                var content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
