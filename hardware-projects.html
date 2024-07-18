@@ -61,14 +61,14 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/lXSvIbOUCy0" frameborder="0" allowfullscreen></iframe>
                 </div>
                     <p> This 2-player handheld game is powered by the TI TIVA TM4C123G lauchpad. Custom-built hardware includes buttons for menu item selection/ attack, DACs for sound output, ADCs for joystick sampling, wireless receiver 
-                        and transmitter antennas for serialized player-to-player communication, and an LCD screen for display.
-                        The main game routine is programmed in C. C++ modules are used to initialize hardware and communication protocols. Hardware interrupts are triggered on player input and are serviced using interrupt service routines.
-                        Busy-Wait threads and sempahores are used for synchronizig interrupts. 
-                        The Bounding Volume Hierarchy (BVH) algorithm is used for collision detection, which models gameplay events where one player attacks another. The algorithm encloses the sprites into geometric shapes and assesses overlap.
-                        Race conditions are caused by 2 players striking at the same time, which are solved by a randomization algorithm that arbitrarily sets priority.
-                        An SPI communication module is implemented for communication with LCD screen. Serialization is configured using queues for FIFO data retrieval. Error codes are generated for error-checking.
-                        Images are stored as hexadecimal pixel matrices, and are loaded via simple array parsing into buffers for display. 
-                        Sound/ music is compressed using WAV files.
+                        and transmitter antennas for serialized player-to-player communication, and an LCD screen for display. 
+                        The main game routine is programmed in C. C++ modules are used to initialize hardware and communication protocols. Hardware interrupts are triggered on player input and are serviced using interrupt service routines.  
+                        Busy-Wait threads and sempahores are used for synchronizig interrupts.  
+                        The Bounding Volume Hierarchy (BVH) algorithm is used for collision detection, which models gameplay events where one player attacks another. The algorithm encloses the sprites into geometric shapes and assesses overlap.  
+                        Race conditions are caused by 2 players striking at the same time, which are solved by a randomization algorithm that arbitrarily sets priority.  
+                        An SPI communication module is implemented for communication with LCD screen. Serialization is configured using queues for FIFO data retrieval. Error codes are generated for error-checking.  
+                        Images are stored as hexadecimal pixel matrices, and are loaded via simple array parsing into buffers for display.  
+                        Sound/ music is compressed using WAV files.  
                     </p>
                 <div class="project">
                     <h2>Elevator Motor Bridge Driver</h2>
