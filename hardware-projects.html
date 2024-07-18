@@ -56,66 +56,60 @@
             <h1>Hardware Projects</h1>
             <div class="project">
                 <h2>Mortal Mayhem</h2>
+                <p>2-player handheld game. Emulation of the retro classic <em>Mortal Kombat</em></p>
                 <div class="media">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/lXSvIbOUCy0" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <p>An emulation of the retro classic Arcade Game Mortal Kombat</p>
                 <div class="big-description">
                     <p> This 2-player handheld game is powered by the TI TIVA TM4C123G lauchpad. Custom-built hardware includes buttons for menu item selection/ attack, DACs for sound output, ADCs for joystick sampling, wireless receiver 
                         and transmitter antennas for serialized player-to-player communication, and an LCD screen for display.
                         The main game routine is programmed in C. C++ modules are used to initialize hardware and communication protocols. Hardware interrupts are triggered on player input and are serviced using interrupt service routines.
-                        Busy-Wait threads and sempahores are used for synchronization of interrupts, enabling concurrency. 
-                        Bounding Volume Hierarchy(BVH) algorithm is used for collision detection to process events where a player strikes the other and adjust health bar. This algorithm encloses the player sprites into geometric shapes and assesses overlap.
-                        Race conditions are caused by 2 players striking at the same time, which are solved by a randomization algorithm which arbitrarily sets priority.
-                        SPI communication module is implemented for communication with LCD screen. Serialization is configured using queues for firt-in-first-out data retrieval. Error codes are used error-checking and debugging.
-                        Images are stored as hexadecimal pixel matrices, and are loaded into buffers for display. 
-                        Sounds/ music are stored as WAV files comprising discretely sampled pulses and are read periodically for playback.
+                        Busy-Wait threads and sempahores are used for synchronizig interrupts. 
+                        The Bounding Volume Hierarchy (BVH) algorithm is used for collision detection, which models gameplay events where one player attacks another. The algorithm encloses the sprites into geometric shapes and assesses overlap.
+                        Race conditions are caused by 2 players striking at the same time, which are solved by a randomization algorithm that arbitrarily sets priority.
+                        An SPI communication module is implemented for communication with LCD screen. Serialization is configured using queues for FIFO data retrieval. Error codes are generated for error-checking.
+                        Images are stored as hexadecimal pixel matrices, and are loaded via simple array parsing into buffers for display. 
+                        Sound/ music is compressed using WAV files.
                     </p>
                 </div>
                 <div class="project">
                     <h2>Elevator Motor Bridge Driver</h2>
+                    <p>Printed Circuit Board </p>
                     <div class="media">
                         <div class = "accordion">
                             <div class = "accordion-item">
                                 <div class = "accordion-header">
-                                    Image1
+                                    PCB
                                 </div>
                                 <div class = "accordion-content">
-                                    <img src="image1.webp" alt="PCB">
+                                    <img src="image1.jpg" alt="PCB">
                                 </div>
                             </div>
                             <div class = "accordion-item">
-                                <div class = "accordion-header">Image2</div>
+                                <div class = "accordion-header">Architecture</div>
                                 <div class = "accordion-content">
                                     <img src="image 4.png" alt="Acrhitecture">
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <div class="accordion-header">Image 3</div>
+                                <div class="accordion-header">MOSFETs in H-Bridge</div>
                                 <div class="accordion-content">
                                     <img src="image2.webp" alt="MOSFET Configuration">
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header">Image 3</div>
-                                <div class="accordion-content">
-                                    <img src="image3.png" alt="MPPT Algorithm">
-                                </div>
-                            </div>
+                            </div>  
+                            <div class="big-description">
+                                <p> 
+                                    Board powering a DC motor from a solar panel, competing with other boards to deliver the maximum power to the motor. 
+                                    Voltage dividers and current sensing resistors measure the solar panel's voltage (V_solar) and current (I_solar), with Op-Amps conditioning these signals. Custom ADC implemented to allow microcontroller to read the signals and run the Perturb & Observe algorithm to determine the optimal operating point of the Photovoltaic System.
+                                    The microcontroller dynamically configures a programmable gain amplifier (PGA) to adapt to varying signal levels, ensuring accurate measurements. 
+                                    The control signal is output to a DAC, which converts it to an analog voltage for a voltage-controlled PWM generator. 
+                                    This PWM signal controls two MOSFETs in a half-bridge configuration, with an additional analog feedback loop using a precision voltage reference and a low-pass filter to stabilize and fine-tune the PWM signal for more efficient power delivery. 
+                                    The PCB is designed and fabricated using KiCAD, correct placement and routing. Testing involves verifying signal measurements, microcontroller functionality, PWM output, and overall system performance, under varying solar conditions to ensure maximum power delivery.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <p>Printed Circuit Board </p>
-                    <div class="big-description">
-                        <p> 
-                            Board powering a DC motor from a solar panel, competing with other boards to deliver the maximum power to the motor. 
-                            Voltage dividers and current sensing resistors measure the solar panel's voltage (V_solar) and current (I_solar), with operational amplifiers conditioning these signals. The microcontroller reads these measurements with custom ADC and runs the Perturb & Observe (P&O) algorithm to determine the optimal operating point. 
-                            The microcontroller also dynamically configures a programmable gain amplifier (PGA) to adapt to varying signal levels, ensuring accurate measurements. 
-                            The control signal is output to a DAC, which converts it to an analog voltage for a voltage-controlled PWM generator. 
-                            This PWM signal controls two MOSFETs in a half-bridge configuration, with an additional analog feedback loop using a precision voltage reference and a low-pass filter to stabilize and fine-tune the PWM signal for more efficient power delivery. 
-                            The PCB is designed and fabricated using KiCAD, ensuring all components are correctly placed and routed. Testing involves verifying signal measurements, microcontroller functionality, PWM output, and overall system performance, including the adaptive PGA configuration and the analog feedback loop's effectiveness, under varying solar conditions to ensure maximum power delivery and enhanced system stability.
-                        </p>
-        </div>
+                </div>
     </section>
     <script src="scripts.js"></script>
     <script>
