@@ -61,6 +61,18 @@
             text-align: center;
             max-width: 800px;
         }
+        .random .video-container {
+            margin-top: 20px;
+        }
+        .zoom-img {
+            transition: transform 0.5s ease;
+            width: 300px;
+            height: 200px;
+            transform-origin: bottom left;
+        }
+        .audio-container {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -79,15 +91,30 @@
         <div class="container">
             <h2>Random</h2>
             <p>#random</p>
-            <iframe class="animation-player" src="animation.mp4" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"><br></iframe>
+            <iframe class="animation-player" src="animation.mp4" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             <iframe class="random-images" src="thunder.webp" width="450" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <!-- Video Element -->
-            <video width="450" height="300" loop autoplay muted>
-                <source src="rocky.mov" type="video/mov">
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-container">
+                <video src="rocky.mov" width="450" height="300" loop autoplay muted></video>
+            </div>
+            <img src="regshow.webp" alt="Random Image" class="zoom-img">
+            <div class="audio-container">
+                <audio controls>
+                    <source src="your-audio-file.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </div>
     </section>
-    <script src="scripts.js"></script>
+    <!-- <script src="scripts.js"></script> -->
+    <script>
+        const zoomImg = document.querySelector('.zoom-img');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 100) { 
+                zoomImg.style.transform = `scale(${1 + scrollY / 1000})`;
+            }
+        });
+    </script>
 </body>
 </html>
